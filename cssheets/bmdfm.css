@@ -1,0 +1,13 @@
+.txt8{font-family:Arial,Helvetica,Sans-Serif; font-size:8pt; color:#000000;}
+.txt12{font-family:Arial,Helvetica,Sans-Serif; font-size:12pt; font-weight:bold; color:#000000;}
+.txt12b{font-family:Arial,Helvetica,Sans-Serif; font-size:12pt; font-weight:bold; color:#000000;}
+.txt14{font-family:Arial,Helvetica,Sans-Serif; font-size:14pt; font-weight:bold; color:#000000;}
+.txt14c{font-family:Arial,Helvetica,Sans-Serif; font-size:14pt; font-weight:bold; color:#228800;}
+.txt18h{font-family:Arial,Helvetica,Sans-Serif; font-size:18pt; color:#228800;}
+.txt22{font-family:Arial,Helvetica,Sans-Serif; font-size:22pt; color:#228800;}
+.txt24{font-family:Arial,Helvetica,Sans-Serif; font-size:24pt; color:#228800;}
+a:link{color:#228800; text-decoration:underline;}
+a:visited{color:#006600; text-decoration:underline;}
+a:active{color:#44aa00; text-decoration;}
+a:hover{color:#44aa22; text-decoration;}
+
