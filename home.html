@@ -1,0 +1,93 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+<html>
+<head>
+<title>BMDFM The Official Web Site</title>
+<meta name="author" content="J. Galsterer, Poly4Media">
+<meta name="keywords" content="BMDFM, Automatic Parallelization, Static, Dynamic Scheduling, Dataflow, Data-Flow Machine, DFM, Shared Memory Symmetric, Multiprocessors, Multi-Core, Multi-Cores, SMP, UNIX SVR4, Linux, Windows, Win32, SunOS, Solaris, IRIX, Sparc, Sun, MIPS, Silicon Graphics, SGI, Intel, 32-bit, 64-bit, Parallel Computing, Execution, High Performance Computing, MIMD, LISP, C, C++, Virtual Machine, Software Emulation, IPC, Parallelism, Concurrent, Synchronization, Fine-Grain, Coarse-Grain, Tagged Token, CPU, Multithreading, Multithreaded, Multithreadedly, Thread, Threads, Process, Processes, Mainframe, Supercomputer, Aggressive Optimization, Code, Instruction, ccNUMA, NUMA, UMA, Distributed Memory, Computer Architecture, Granularity">
+<link rel="stylesheet" href="cssheets/bmdfm.css" type="text/css">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#FF0000" alink="#FF0000" vlink="#FF0000" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0>
+<a name="top"><table border=0 cellspacing=0 cellpadding=3></a>
+<tr>
+ <td><img src="pics/logo2.gif" width="150" height="120" border="0" alt=""></td>
+ <td>&nbsp;</td>
+ <td align="center" bgcolor="#d9deec" height=120 width=80%><br><h1 class="txt24">BMDFM Official Site</h1></td>
+</tr>
+<tr><td colspan=3 height=15>&nbsp;</td></tr>
+<tr>
+ <td valign="top"  bgcolor="#d9deec" width=150>
+<table border=0 cellspacing=10 cellpadding=0 bgcolor="#d9deec">
+<tr>
+ <td rowspan=8 width=15>&nbsp;</td>
+ <td colspan=2 class="txt14"><li>BMDFM</li></td>
+</tr>
+<tr>
+ <td rowspan=4 width=15>&nbsp;</td>
+ <td class="txt12b"><li type="circle"><a href="#bm01">Overview</a></li></td>
+</tr>
+<tr>
+ <td class="txt12b"><li type="circle"><a href="#bm02">Features</a></li></td>
+</tr>
+<tr>
+ <td class="txt12b"><li type="circle"><a href="#bm03">Parallelism</a></li></td>
+</tr>
+<tr>
+ <td class="txt12b"><li type="circle"><a href="#bm04">Platforms</a></li></td>
+</tr>
+<tr>
+ <td colspan=2 class="txt14"><li><a href="download.html">Download&nbsp;Area</a></li></td>
+</tr>
+<tr>
+ <td colspan=2 class="txt14"><li><a href="contact.html">Support</a></li></td>
+</tr>
+<tr>
+ <td colspan=2 class="txt14"><li><a href="lagreem.html">EULA</a></li></td>
+</tr>
+</table></td>
+ <td width=15>&nbsp;</td>
+ <td class="txt12" background="pics/background5.gif"><h2 class="txt18h"><a name="bm01"></a>What is BMDFM?</h2>
+BMDFM (Binary Modular DataFlow Machine) is software, which enables running an application in parallel on shared memory symmetric multiprocessors (SMP) using the multiple processor cores to speed up the execution of single applications.<br>
+BMDFM automatically identifies and exploits parallelism due to the static and mainly DYNAMIC SCHEDULING of the data flow instruction sequences derived from the formerly sequential program ensuring unique parallel correctness.<br>
+<font color="#800000"><b>No directives for parallel execution are required!</b></font><br>
+<font color="#800000"><b>No highly knowledgeable parallel programmers are required!</b></font><br>
+<p align="right"><a href="#top">[ top ]</a></p><br><br>
+<h2 class="txt18h"><a name="bm02"></a>What does BMDFM provide to a user?</h2>
+A user understands BMDFM as a virtual machine, which runs every statement of an application program in parallel having all parallelization and synchronization mechanisms fully transparent. The statements of an application program are normal operators, which any singlethreaded program might consist of - they are variable assignments, conditional executions, loops, function calls, etc. BMDFM has a rich set of standard operators/functions, which can be extended by user functions written in C/C++.<br>
+In comparison with the recent general methodology of sequential code parallelization, which is based on static analysis, BMDFM uses dynamic scheduling to define and to run code fragments in parallel. It means that data computed at run time will define further branches for parallel processing (DataFlow principle). It also means that loops of an application program will be dynamically unrolled to process several iterations in parallel.<br><p align="right"><a href="#top">[ top ]</a></p><br><br>
+<h2 class="txt18h"><a name="bm03"></a>Which granularity of parallelism is used in BMDFM?</h2>
+BMDFM exploits fine-grain parallelism. All instructions of an application will be processed in parallel. In addition, it is possible to exploit coarse-grain parallelism that will decrease costs spent on dynamic scheduling. In order to achieve this a portion of C code can be defined as a user function, which will be treated by the dynamic scheduler as one seamless instruction.<br><p align="right"><a href="#top">[ top ]</a></p><br><br>
+<h2 class="txt18h"><a name="bm04"></a>Which platforms may run BMDFM?</h2>
+<font color="#800000"><b>Every machine supporting ANSI C and POSIX/SVR4-IPC may run BMDFM.</font></b><br>
+Obviously, BMDFM is able to accelerate the execution time of an application only when installed on a multiprocessor computer implementing an SMP paradigm (hardware mapping of distributed memory into virtual shared memory, cache coherent non-uniform memory access ccNUMA, UMA!, etc.)<br>
+BMDFM is provided as compiled multi-threaded versions for:
+<ul type="square">
+<li>x86: <font color="#800000">Linux/32, FreeBSD/32, OpenBSD/32, NetBSD/32, MacOS/32, SunOS/32, UnixWare/32, Minix/32, Android/32, Win-Cygwin/32, Win-UWIN/32, Win-SFU-SUA/32</font>;</li>
+<li>x86-64: <font color="#800000">Linux/64, FreeBSD/64, OpenBSD/64, NetBSD/64, MacOS/64, SunOS/64, Android/64, Win-Cygwin/64</font>;</li>
+<li>VAX: <font color="#800000">Ultrix/32</font>;</li>
+<li>Alpha: <font color="#800000">Tru64OSF1/64, Linux/64, FreeBSD/64, OpenBSD/64</font>;</li>
+<li>IA-64: <font color="#800000">HP-UX/32, HP-UX/64, Linux/64, FreeBSD/64</font>;</li>
+<li>XeonPhiMIC: <font color="#800000">Linux/64</font>;</li>
+<li>MCST-Elbrus: <font color="#800000">Linux/32, Linux/64</font>;</li>
+<li>PA-RISC: <font color="#800000">HP-UX/32, HP-UX/64, Linux/32</font>;</li>
+<li>SPARC: <font color="#800000">SunOS/32, SunOS/64, Linux/32, Linux/64, FreeBSD/64, OpenBSD/64</font>;</li>
+<li>MIPS: <font color="#800000">IRIX/32, IRIX/64, Linux/32, Linux/64</font>;</li>
+<li>MIPSel: <font color="#800000">Linux/32, Linux/64, Android/32, Android/64</font>;</li>
+<li>PowerPC: <font color="#800000">AIX/32, AIX/64, MacOS/32, MacOS/64, Linux/32, Linux/64, FreeBSD/32, FreeBSD/64</font>;</li>
+<li>PowerPCle: <font color="#800000">Linux/32, Linux/64</font>;</li>
+<li>S/390: <font color="#800000">zOS-USS/32, zOS-USS/64, Linux/32, Linux/64</font>;</li>
+<li>M68000: <font color="#800000">Linux/32</font>;</li>
+<li>ARM: <font color="#800000">Linux/32, Linux/64, FreeBSD/64, Android/32, Android/64, MacOS/64</font>;</li>
+<li>ARMbe: <font color="#800000">Linux/64</font>;</li>
+<li>RISC-V: <font color="#800000">Linux/32, Linux/64</font>;</li>
+<li>LoongArch: <font color="#800000">Linux/64</font>;</li>
+<li>and a limited single-threaded version for x86: <font color="#800000">Win/32</font>.</li>
+</ul>
+A machine with one CPU can be used for development and test purposes only as it is not possible to get real acceleration on one CPU. But as soon the application program has reached a certain state of maturity it can be moved to BMDFM running on a wide range of multicore/many-core computers (from tiny embedded devices to multiprocessor big iron mainframes).<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JwJZlMrpjck" title="BMDFM: Parallel Processing on Multicore Computers Using Binary Modular Dataflow Machine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ulSnQWEq0eY" title="BMDFM Continuous Stability Testing on Mainframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p align="right"><a href="#top">[ top ]</a></p><br><br></td>
+</tr>
+<tr><td colspan=3 align="center" class="txt8">&copy 2002-<script type="text/javascript">document.write(new Date().getFullYear())</script> BMDFM - mailto: <a href="mailto:webmaster@bmdfm.de">Webmaster</a> - <a href="privacy-policy.html">Privacy Policy</a></td></tr>
+</table>
+</body>
+</html>
